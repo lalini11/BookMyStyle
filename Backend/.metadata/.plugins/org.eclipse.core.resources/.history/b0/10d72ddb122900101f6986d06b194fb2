@@ -1,0 +1,5 @@
+package com.BookMyStyle.Model;
+
+public class User {
+
+}

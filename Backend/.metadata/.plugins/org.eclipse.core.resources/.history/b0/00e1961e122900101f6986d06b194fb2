@@ -1,0 +1,5 @@
+package com.BookMyStyle.Controller;
+
+public class HomeController {
+
+}
