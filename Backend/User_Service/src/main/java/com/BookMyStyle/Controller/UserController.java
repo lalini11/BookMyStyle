@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.BookMyStyle.Exception.UserException;
 import com.BookMyStyle.Model.User;
 import com.BookMyStyle.Repository.UserRepo;
 
@@ -41,14 +42,14 @@ public class UserController {
 		if(otp.isPresent()) {
 			return otp.get();
 		}
-		throw new Exception("User Not Found");
+		throw new UserException("User Not Found");
 	}
 	
 	@PutMapping("/{id}")
 	public User updateUser(@RequestBody User user, @PathVariable Long id) throws Exception {
 		Optional<User> otp = userRepo.findById(id);
 		if(otp.isEmpty()) {
-			throw new Exception("User Not found with id" + id);
+			throw new UserException("User Not found with id" + id);
 		}
 		User existingUser = otp.get();
 		
@@ -64,7 +65,7 @@ public class UserController {
 	public String deleteUserById(@PathVariable Long id) throws Exception {
 		Optional<User> otp = userRepo.findById(id);
 		if(otp.isEmpty()) {
-			throw new Exception("User Not found with id" + id);
+			throw new UserException("User Not found with id" + id);
 		}
 		
 		userRepo.deleteById(otp.get().getId());
