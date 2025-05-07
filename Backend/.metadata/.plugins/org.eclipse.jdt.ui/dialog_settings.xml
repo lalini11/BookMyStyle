@@ -29,6 +29,7 @@
 		<item key="updateTextualMatches" value="true"/>
 		<item key="updateQualifiedNames" value="true"/>
 		<item key="patterns" value="*"/>
+		<item key="renameSubpackages" value="true"/>
 	</section>
 	<section name="NewClassCreationWizard.dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="268"/>
