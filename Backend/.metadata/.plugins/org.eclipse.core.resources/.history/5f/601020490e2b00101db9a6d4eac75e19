@@ -1,0 +1,5 @@
+package com.BookMyStyle.Service;
+
+public interface UserService {
+
+}
